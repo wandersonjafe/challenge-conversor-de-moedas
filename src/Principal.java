@@ -8,12 +8,12 @@ public class Principal {
 
         while (opcao != 0) {
             System.out.println("\n=== Conversor de Moedas ===");
-            System.out.println("1 - USD → BRL ");
-            System.out.println("2 - EUR → BRL ");
-            System.out.println("3 - BRL → USD ");
-            System.out.println("4 - ARS → BRL ");
-            System.out.println("5 - BRL → EUR ");
-            System.out.println("6 - GBP → BRL ");
+            System.out.println("1 - ARS → BRL ");
+            System.out.println("2 - BOB → BRL ");
+            System.out.println("3 - BRL → CLP ");
+            System.out.println("4 - CLP → BRL ");
+            System.out.println("5 - COP → USD ");
+            System.out.println("6 - USD → BRL ");
             System.out.println("0 - Sair ");
             System.out.print("Escolha a opção: ");
             opcao = leitura.nextInt();
@@ -23,21 +23,20 @@ public class Principal {
                 break;
             }
 
-            System.out.println("Informe o valor que deseja converter: ");
+            System.out.print("Informe o valor que deseja converter: ");
             String valorTexto = leitura.next().replace(",", ".");
             double valor = Double.parseDouble(valorTexto);
-
 
             String de = "";
             String para = "";
 
             switch (opcao) {
-                case 1 -> { de = "USD"; para = "BRL"; }
-                case 2 -> { de = "EUR"; para = "BRL"; }
-                case 3 -> { de = "BRL"; para = "USD"; }
-                case 4 -> { de = "ARS"; para = "BRL"; }
-                case 5 -> { de = "BRL"; para = "EUR"; }
-                case 6 -> { de = "GBP"; para = "BRL"; }
+                case 1 -> { de = "ARS"; para = "BRL"; }
+                case 2 -> { de = "BOB"; para = "BRL"; }
+                case 3 -> { de = "BRL"; para = "CLP"; }
+                case 4 -> { de = "CLP"; para = "BRL"; }
+                case 5 -> { de = "COP"; para = "USD"; }
+                case 6 -> { de = "USD"; para = "BRL"; }
                 default -> {
                     System.out.println("Opção inválida!");
                     continue;
