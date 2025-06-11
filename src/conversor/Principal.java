@@ -11,11 +11,11 @@ public class Principal {
         while (opcao != 0) {
             System.out.println("\n=== Conversor de Moedas ===");
             System.out.println("1 - USD → BRL");
-            System.out.println("2 - EUR → BRL");
-            System.out.println("3 - BRL → USD");
-            System.out.println("4 - ARS → BRL");
-            System.out.println("5 - BRL → EUR");
-            System.out.println("6 - GBP → BRL");
+            System.out.println("2 - BRL → USD");
+            System.out.println("3 - ARS → BRL");
+            System.out.println("4 - BRL → ARS");
+            System.out.println("5 - CLP → BRL");
+            System.out.println("6 - BRL → COP");
             System.out.println("0 - Sair");
             System.out.print("Escolha a opção: ");
 
@@ -23,7 +23,7 @@ public class Principal {
                 opcao = leitura.nextInt();
             } else {
                 System.out.println("Opção inválida!");
-                leitura.next(); 
+                leitura.next();
                 continue;
             }
 
@@ -48,11 +48,11 @@ public class Principal {
 
             switch (opcao) {
                 case 1 -> { de = "USD"; para = "BRL"; }
-                case 2 -> { de = "EUR"; para = "BRL"; }
-                case 3 -> { de = "BRL"; para = "USD"; }
-                case 4 -> { de = "ARS"; para = "BRL"; }
-                case 5 -> { de = "BRL"; para = "EUR"; }
-                case 6 -> { de = "GBP"; para = "BRL"; }
+                case 2 -> { de = "BRL"; para = "USD"; }
+                case 3 -> { de = "ARS"; para = "BRL"; }
+                case 4 -> { de = "BRL"; para = "ARS"; }
+                case 5 -> { de = "CLP"; para = "BRL"; }
+                case 6 -> { de = "BRL"; para = "COP"; }
                 default -> {
                     System.out.println("Opção inválida!");
                     continue;

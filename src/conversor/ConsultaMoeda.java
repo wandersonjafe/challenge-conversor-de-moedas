@@ -14,8 +14,9 @@ public class ConsultaMoeda {
     private static final String API_KEY = "16603b5c2d0cae098f079511";
     private static final String BASE_URL = "https://v6.exchangerate-api.com/v6/";
     private static final Set<String> MOEDAS_PERMITIDAS = Set.of(
-            "USD", "BRL", "EUR", "GBP", "ARS", "CLP", "JPY"
+            "USD", "BRL", "ARS", "BOB", "CLP", "COP"
     );
+
 
     public double buscarCotacao(String de, String para) {
         if (!MOEDAS_PERMITIDAS.contains(de) || !MOEDAS_PERMITIDAS.contains(para)) {
