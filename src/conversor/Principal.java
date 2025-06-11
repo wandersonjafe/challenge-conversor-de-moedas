@@ -1,9 +1,11 @@
+package conversor;
+
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
         Scanner leitura = new Scanner(System.in);
-        ConsultaMoeda consulta = new ConsultaMoeda();
+        conversor.ConsultaMoeda consulta = new conversor.ConsultaMoeda();
         int opcao = -1;
 
         while (opcao != 0) {
@@ -16,7 +18,14 @@ public class Principal {
             System.out.println("6 - GBP → BRL");
             System.out.println("0 - Sair");
             System.out.print("Escolha a opção: ");
-            opcao = leitura.nextInt();
+
+            if (leitura.hasNextInt()) {
+                opcao = leitura.nextInt();
+            } else {
+                System.out.println("Opção inválida!");
+                leitura.next(); 
+                continue;
+            }
 
             if (opcao == 0) {
                 System.out.println("Aplicação finalizada!");
@@ -25,7 +34,14 @@ public class Principal {
 
             System.out.print("Informe o valor que deseja converter: ");
             String valorTexto = leitura.next().replace(",", ".");
-            double valor = Double.parseDouble(valorTexto);
+            double valor;
+
+            try {
+                valor = Double.parseDouble(valorTexto);
+            } catch (NumberFormatException e) {
+                System.out.println("Valor inválido! Tente novamente.");
+                continue;
+            }
 
             String de = "";
             String para = "";
